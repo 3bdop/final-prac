@@ -198,7 +198,7 @@ const AdminScreen = ({ navigation }) => {
                 >
                     <Button
                         color={"success"}
-                        style={{ width: 200, }}
+                        style={{ width: 300, }}
                         onPress={store}
                     >
                         Store
@@ -210,13 +210,13 @@ const AdminScreen = ({ navigation }) => {
             <Card width={'90%'} height={'45%'}>
                 <Card.Title>RESTURANT LIST</Card.Title>
                 <Card.Divider />
-                <ScrollView style={{ height: scrollViewHeight, maxHeight: 280 }}>
+                <ScrollView width={'100%'} height={'85%'}>
                     {data.map((item, index) => (
-                        <View key={index}>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', height: '40%', width: '110%', alignItems: 'center' }}>
-                                <TouchableOpacity style={{ backgroundColor: 'lightblue ' }}
+                        <View key={index} style={{ justifyContent: 'space-between' }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', }}>
+                                <TouchableOpacity style={{ backgroundColor: 'lightblue', width: '25%', height: 20 }}
                                     onPress={() => navigation.navigate("Menu", { item })} >
-                                    <Text>{item.name}</Text>
+                                    <Text style={{ alignSelf: 'center' }}>{item.name}</Text>
                                 </TouchableOpacity>
                                 <Text>{item.location}</Text>
                                 <AntDesign name='delete' size={24} color={'red'} onPress={() => deleteRes(item.id)} />
